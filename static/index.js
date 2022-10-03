@@ -1,18 +1,8 @@
 
-async function getData() {
-  const response = await fetch("predictions.csv");
-  var data = await response.text();
-  data = data.split("\n");
-  const headers = data[0];
-  console.log(headers)
-  const rows = data.slice(1);
-  console.log(rows)
-  return [headers, rows];
-}
-
 async function tableCreate() {
-  const response = await fetch("predictions.csv");
-  var data = await response.text();
+  //const response = await fetch("/./predictions.csv");
+  //var data = await response.text();
+  //console.log(data);
   data = data.split("\n");
   const headers = data[0].split(",");
   const rows = data.slice(1);
@@ -50,13 +40,15 @@ async function tableCreate() {
   body.appendChild(tbl);
 }
 
-function styleTable(table){
+function styleTable(){
+  var body = document.getElementsByClassName("myTable")[0];
+  var table = document.createElement("table");
   table.style.width = '70%';
   table.style.marginLeft = "auto";
   table.style.marginRight = "auto";
   table.setAttribute('border', '2');
   table.setAttribute('class', "table table-bordered table-hover table-dark");
-  return table;
+  body.appendChild(table)
 }
 
 function findMax(arr) {
@@ -72,4 +64,4 @@ function findMax(arr) {
   return max_idx
 }
 
-tableCreate();
+styleTable();
