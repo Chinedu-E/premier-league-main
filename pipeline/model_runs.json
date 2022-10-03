@@ -1,0 +1,83 @@
+{
+    "RandomForestClassifier": {
+        "run_0": {
+            "number of features": 8,
+            "test_score": 0.5171232876712328,
+            "val_score": 0.5753424657534246
+        },
+        "run_1": {
+            "number of features": 11,
+            "test_score": 0.541095890410959,
+            "val_score": 0.547945205479452
+        },
+        "run_2": {
+            "number of features": 20,
+            "test_score": 0.541095890410959,
+            "val_score": 0.5616438356164384
+        },
+        "run_3": {
+            "number of features": 4,
+            "test_score": 0.4623287671232877,
+            "val_score": 0.4520547945205479
+        },
+        "run_4": {
+            "number of features": 17,
+            "test_score": 0.5308219178082192,
+            "val_score": 0.5342465753424658
+        }
+    },
+    "LogisticRegression": {
+        "run_0": {
+            "number of features": 8,
+            "test_score": 0.5547945205479452,
+            "val_score": 0.589041095890411
+        },
+        "run_1": {
+            "number of features": 11,
+            "test_score": 0.5924657534246576,
+            "val_score": 0.547945205479452
+        },
+        "run_2": {
+            "number of features": 20,
+            "test_score": 0.5856164383561644,
+            "val_score": 0.547945205479452
+        },
+        "run_3": {
+            "number of features": 4,
+            "test_score": 0.5273972602739726,
+            "val_score": 0.5616438356164384
+        },
+        "run_4": {
+            "number of features": 17,
+            "test_score": 0.5684931506849316,
+            "val_score": 0.5342465753424658
+        }
+    },
+    "XGBClassifier": {
+        "run_0": {
+            "number of features": 8,
+            "test_score": 0.541095890410959,
+            "val_score": 0.5205479452054794
+        },
+        "run_1": {
+            "number of features": 11,
+            "test_score": 0.5068493150684932,
+            "val_score": 0.5616438356164384
+        },
+        "run_2": {
+            "number of features": 20,
+            "test_score": 0.5205479452054794,
+            "val_score": 0.5342465753424658
+        },
+        "run_3": {
+            "number of features": 4,
+            "test_score": 0.4863013698630137,
+            "val_score": 0.5616438356164384
+        },
+        "run_4": {
+            "number of features": 17,
+            "test_score": 0.5308219178082192,
+            "val_score": 0.5342465753424658
+        }
+    }
+}
