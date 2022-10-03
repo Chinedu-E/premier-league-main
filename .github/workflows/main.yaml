@@ -8,7 +8,7 @@ on:
 # workflow jobs
 jobs:
   build:
-    runs-on:
+    runs-on: ubuntu-latest
     steps:
       # Check-out the repo
       - name: Checkout
