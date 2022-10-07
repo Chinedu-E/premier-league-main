@@ -1,8 +1,9 @@
-import pipeline.utils as U
+import utils as U
+import os
 
 
-DATA_DIR = "/Users/chinedu/Desktop/premier-league-main/data/"
-
+DATA_DIR = "data/"
+print(os.getcwd())
 
 def main():
 
@@ -126,5 +127,4 @@ def main():
     labels.to_csv()
 
 
-if __name__ == "__main__":
-    main()
+main()

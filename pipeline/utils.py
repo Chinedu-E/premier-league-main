@@ -41,9 +41,9 @@ class Features:
         return self.features.values
 
     def to_csv(self):
-        self.features.to_csv("features.csv", index=False)
+        self.features.to_csv("pipeline/features.csv", index=False)
         if self.split:
-            self.to_predict.to_csv("to_predict.csv", index=False)
+            self.to_predict.to_csv("pipeline/to_predict.csv", index=False)
 
     def split_prediction(self, n: int):
         self.to_predict = self.features.iloc[-n:]
@@ -502,7 +502,7 @@ def update_past_games(url: str = None, filename: str = None) -> bool:
             The return value. True for success, False otherwise.
 
         """
-    download_url = url if url else "https://www.football-data.co.uk/mmz4281/2122/E0.csv"
+    download_url = url if url else "https://www.football-data.co.uk/mmz4281/2223/E0.csv"
     req = requests.get(download_url)
     filename = filename if filename else req.url[download_url.rfind('/') + 1:]
 
@@ -527,28 +527,6 @@ def split_features(features: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     features.drop(labels=["HomeTeam", "AwayTeam"], axis=1, inplace=True)
     return team, features
 
-
-def teams_to_sequences(data: pd.DataFrame, tokenizer):
-    """Example function with PEP 484 type annotations.
-
-        Args:
-            data: The first parameter.
-            tokenizer: The second parameter.
-
-        Returns:
-            The return value. True for success, False otherwise.
-
-        """
-    max_len = 2
-    tokenizer.fit_on_texts(data["HomeTeam"])
-    home_sequences = tokenizer.texts_to_sequences(data["HomeTeam"])
-    away_sequences = tokenizer.texts_to_sequences(data["AwayTeam"])
-    home_sequences = pad_sequences(home_sequences, maxlen=max_len, padding="post", truncating="post")
-    away_sequences = pad_sequences(away_sequences, maxlen=max_len, padding="post", truncating="post")
-    team_sequences = np.concatenate([home_sequences, away_sequences], axis=1)
-    return team_sequences, tokenizer
-
-
 def merge_fixtures(x1, x2):
     merged = pd.concat([x1, x2])
     merged.reset_index(drop=True, inplace=True)
@@ -556,7 +534,7 @@ def merge_fixtures(x1, x2):
 
 
 def load_fixtures():
-    df = pd.read_csv("/Users/chinedu/Desktop/premier-league-main/fixtures.csv")
+    df = pd.read_csv("/Users/chinedu/Desktop/Desktop - Ekeruche’s MacBook Pro/premier-league-main/fixtures.csv")
     df = df[df["Div"] == "E0"]
     df.fillna(0, inplace=True)
     df.reset_index(drop=True, inplace=True)

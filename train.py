@@ -36,10 +36,10 @@ def main():
     print(f"shape of training data {X_train.shape}")
     print(f"shape of testing data {X_test.shape}")
 
-    rf = RandomForestClassifier(n_estimators=1000, n_jobs=-1, random_state=0)
+    rf = RandomForestClassifier(n_estimators=250, n_jobs=-1, random_state=0)
     rf.fit(X_train, y_train)
 
-    lr = LogisticRegression(max_iter=100, n_jobs=-1, random_state=0)
+    lr = LogisticRegression(max_iter=1000, n_jobs=-1, random_state=0)
     lr.fit(X_train, y_train)
 
     ada = AdaBoostClassifier(n_estimators=100, random_state=0)
