@@ -7,19 +7,20 @@ from email.message import EmailMessage
 import smtplib
 
 
-# fetch_fixtures(filename="fixtures.csv")
+fetch_fixtures(filename="fixtures.csv")
 print("Downloaded fixtures")
 
-# update_past_games(filename="data/2022.csv")
+update_past_games(filename="data/2022.csv")
 print("Downloaded past matches")
 
 print("Updating features...")
-# build_features()
+build_features()
 print("Done")
 
 model_prediction, model_info = train_and_predict()
 # Replace current prediction with new one
-# os.rename("predictions/predictions.csv", "predictions/last_week_predictions.csv")
+os.remove("predictions/last_week_predictions.csv")
+os.rename("predictions/predictions.csv", "predictions/last_week_predictions.csv")
 model_prediction.to_csv("predictions/predictions.csv", index=False)
 
 # Create a text/plain message
