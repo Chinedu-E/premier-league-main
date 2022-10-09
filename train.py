@@ -100,14 +100,14 @@ def main():
     home, away, draw = [], [], []
     pred = rf.predict_proba(df_pred)
     for prob in pred:
-        home.append(f'{prob[2]:.2f}')
-        draw.append(f'{prob[1]:.2f}')
-        away.append(f'{prob[0]:.2f}')
+        home.append(f'{prob[2]*100:.2f}')
+        draw.append(f'{prob[1]*100:.2f}')
+        away.append(f'{prob[0]*100:.2f}')
     df_fixtures = pd.read_csv("fixtures.csv", encoding="cp1252")
     model_predictions = df_fixtures[df_fixtures["Div"] == "E0"][["Date", "Time", "HomeTeam", "AwayTeam"]]
-    model_predictions["HomeChance"] = home
-    model_predictions["DrawChance"] = draw
-    model_predictions["AwayChance"] = away
+    model_predictions["Home %"] = home
+    model_predictions["Draw %"] = draw
+    model_predictions["Away %"] = away
 
     model_predictions.to_csv(f"predictions.csv", index=False)
     print(model_predictions)
