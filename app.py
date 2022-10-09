@@ -1,12 +1,9 @@
-from flask import Flask, render_template
 import pandas as pd
+import streamlit as st
 
-app = Flask(__name__)
+st.title("Premier League Predictions")
+st.markdown("Upcoming matches")
 
-@app.route("/")
-def home():
-    with open("predictions.csv") as f:
-        return render_template('home.html', csv=f)
+df = pd.read_csv("predictions.csv")
 
-if __name__=="__main__":
-    app.run(debug=True)
+st.dataframe(df)
