@@ -1,11 +1,9 @@
 import utils as U
-import os
 
 
 DATA_DIR = "data/"
-print(os.getcwd())
 
-def main():
+def build_features() -> None:
 
     df, file_num = U.load_data(DATA_DIR)
     datagen = U.generate_data(DATA_DIR)
@@ -42,9 +40,6 @@ def main():
             for i in game_week.index.values:
                 home_team: str = game_week.loc[i]["HomeTeam"]
                 away_team: str = game_week.loc[i]["AwayTeam"]
-                ftr: str = game_week.loc[i]["FTR"]
-                fhg: str = game_week.loc[i]["FTHG"]
-                fag: str = game_week.loc[i]["FTAG"]
                 home_pos = U.get_position_on_table(home_team, table)
                 away_pos = U.get_position_on_table(away_team, table)
                 features.update_feature("Home_curr_pos", main_counter, home_pos)
@@ -101,7 +96,6 @@ def main():
                                                         def_str=(hds, ads),
                                                         league_ave=(home_avg_goals, away_avg_goals))
                     print(home_team, away_team, dist)
-                # print(home_team, away_team, ftr, fhg, fag, dist)
                 features.update_feature("home_past_form1", main_counter,
                                         home_past_form[0])
                 features.update_feature("home_past_form2", main_counter,
@@ -125,6 +119,3 @@ def main():
     labels.split_prediction(len(fixtures))
     features.to_csv()
     labels.to_csv()
-
-
-main()

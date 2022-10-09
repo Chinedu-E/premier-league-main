@@ -563,4 +563,3 @@ def poisson_goal_distribution(att_str: tuple[float, float],
         distribution[1][i] = poisson(i, asr)
 
     return distribution
-
