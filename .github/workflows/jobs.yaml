@@ -1,8 +1,8 @@
-name: run ./pipeline/jobs.py
+name: run weekly job
 
 on:
   schedule:
-    - cron: '10 2 * * 5' # At 2:10pm on Friday UTC // 10.10am EST
+    - cron: '40 2 * * 5' # At 2:40pm on Friday UTC // 10.40am EST
 
 jobs:
   build:
