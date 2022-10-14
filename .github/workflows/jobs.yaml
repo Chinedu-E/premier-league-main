@@ -2,7 +2,7 @@ name: run ./pipeline/jobs.py
 
 on:
   schedule:
-    - cron: '01 10 * * 5' # At 12:01 on Friday
+    - cron: '10 2 * * 5' # At 2:10pm on Friday UTC // 10.10am EST
 
 jobs:
   build:
