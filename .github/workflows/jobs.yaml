@@ -25,7 +25,7 @@ jobs:
       - name: execute py script # run jobs.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
-        run: python jobs.py
+        run: python pipeline/jobs.py
           
       - name: commit files
         run: |
