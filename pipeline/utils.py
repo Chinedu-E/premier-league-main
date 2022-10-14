@@ -73,7 +73,7 @@ class Labels:
         self.labels = self.labels.iloc[:-n]
 
     def to_csv(self):
-        self.labels.to_csv("labels.csv", index=False)
+        self.labels.to_csv("pipeline/labels.csv", index=False)
 
     @property
     def columns(self):

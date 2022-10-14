@@ -91,7 +91,7 @@ def build_features() -> None:
 
                 home_past_form = U.get_past_form(df, team=home_team, main_index=main_counter)
                 away_past_form = U.get_past_form(df, team=away_team, main_index=main_counter)
-                if k == file_num-1 and k > (len(df) - len(fixtures)):
+                if k == file_num-1 and i > (len(df) - len(fixtures)):
                     dist = U.poisson_goal_distribution(att_str=(has, aas),
                                                         def_str=(hds, ads),
                                                         league_ave=(home_avg_goals, away_avg_goals))
