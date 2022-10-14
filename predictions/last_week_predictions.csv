@@ -1,11 +1,11 @@
-Date,Time,HomeTeam,AwayTeam,HomeChance,DrawChance,AwayChance
-01/10/2022,12:30,Arsenal,Tottenham,0.41,0.35,0.25
-01/10/2022,15:00,Bournemouth,Brentford,0.29,0.30,0.41
-01/10/2022,15:00,Crystal Palace,Chelsea,0.25,0.26,0.49
-01/10/2022,15:00,Fulham,Newcastle,0.24,0.25,0.51
-01/10/2022,15:00,Liverpool,Brighton,0.64,0.23,0.13
-01/10/2022,15:00,Southampton,Everton,0.29,0.42,0.29
-01/10/2022,17:30,West Ham,Wolves,0.46,0.28,0.26
-02/10/2022,14:00,Man City,Man United,0.67,0.21,0.13
-02/10/2022,16:30,Leeds,Aston Villa,0.40,0.28,0.32
-03/10/2022,20:00,Leicester,Nott'm Forest,0.59,0.23,0.18
+Date,Time,HomeTeam,AwayTeam,Home %,Draw %,Away %
+08/10/2022,15:00,Bournemouth,Leicester,35,30,36
+08/10/2022,15:00,Chelsea,Wolves,61,24,15
+08/10/2022,15:00,Man City,Southampton,90,5,4
+08/10/2022,15:00,Newcastle,Brentford,54,26,20
+08/10/2022,17:30,Brighton,Tottenham,35,33,32
+09/10/2022,14:00,Crystal Palace,Leeds,47,29,24
+09/10/2022,14:00,West Ham,Fulham,50,32,18
+09/10/2022,16:30,Arsenal,Liverpool,37,26,37
+09/10/2022,19:00,Everton,Man United,34,29,38
+10/10/2022,20:00,Nott'm Forest,Aston Villa,32,26,41
