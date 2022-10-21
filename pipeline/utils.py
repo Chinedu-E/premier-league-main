@@ -534,7 +534,7 @@ def merge_fixtures(x1, x2):
 
 
 def load_fixtures():
-    df = pd.read_csv("/Users/chinedu/Desktop/Desktop - Ekeruche’s MacBook Pro/premier-league-main/fixtures.csv")
+    df = pd.read_csv("fixtures.csv")
     df = df[df["Div"] == "E0"]
     df.fillna(0, inplace=True)
     df.reset_index(drop=True, inplace=True)

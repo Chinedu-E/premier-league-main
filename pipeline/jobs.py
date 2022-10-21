@@ -29,17 +29,5 @@ msg_txt = f"""Trained a {model_info.name} model\n\nMetrics:\n\t
         Precision score: {model_info.test_precision:.2f}\n\t
         Recall score: {model_info.test_recall:.2f}\n\t
         F1 score: {model_info.test_f1:.2f}"""
-msg = EmailMessage()
-msg.set_content(msg_txt)
 
-me = "footballtrainer1994@gmail.com"
-you = "crankyekeruche@gmail.com"
-msg['Subject'] = 'New Training Session' 
-msg['From'] = me
-msg['To'] = you
-
-# Send the message via our own SMTP server, but don't include the
-# envelope header.
-s = smtplib.SMTP("localhost")
-s.sendmail(me, [you], msg.as_string())
-s.quit()
+print(msg_txt)
